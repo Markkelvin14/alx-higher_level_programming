@@ -4,4 +4,4 @@ def number_keys(a_dictionary):
     keylist = list(a_dictionary.keys())
     for m in keylist:
         no += 1
-        return (no)
+    return (no)
