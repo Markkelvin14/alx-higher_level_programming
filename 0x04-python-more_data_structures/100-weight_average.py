@@ -7,4 +7,4 @@ def weight_average(my_list=[]):
     for toople in my_list:
         no += toople[0] * toople[1]
         dn += toople[1]
-        return (no / dn)
+    return (no / dn)
