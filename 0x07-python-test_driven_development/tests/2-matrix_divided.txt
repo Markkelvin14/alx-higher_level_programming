@@ -1,0 +1,156 @@
+# 2-matrix_divided.txt
+
+This module divides all elements of a matrix ``matrix_divided(matrix, div)``.
+
+``matrix_divided(...)`` returns a new matrix after division
+
+::
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+    >>> matrix = [
+    ...     [2, 6, 10],
+    ...     [12, 16, 18]
+    ... ]
+    >>> print(matrix_divided(matrix, 2))
+    [[1.0, 3.0, 5.0], [6.0, 8.0, 9.0]]
+
+the quotients are rounded to a maximum of two decimal places
+
+::
+
+    >>> matrix = [
+    ...     [1, 2, 3],
+    ...     [4, 5, 6]
+    ... ]
+    >>> print(matrix_divided(matrix, 3))
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+The original matrix is printed the same as the original
+
+::
+
+    >>> print(matrix)
+    [[1, 2, 3], [4, 5, 6]]
+
+The function can also divide float value matrices
+
+::
+
+    >>> matrix = [
+    ...     [1.2, -2.3, 3.3],
+    ...     [4.5, -5.6, 6.6]
+    ... ]
+    >>> print(matrix_divided(matrix, 3))
+    [[0.4, -0.77, 1.1], [1.5, 1.87, 2.2]]
+
+during matrix division intergers and floats can be combined
+
+::
+
+    >>> matrix = [
+    ...     [1, -2.3, 3, 3.3, 5],
+    ...     [-6.6, 7.00, 8, 9.999, 11]
+    ... ]
+    >>> print(matrix_divided(matrix, 3))
+    [[0.33, -0.77, 1.0, 1.1, 1.67], [-2.2, 2.33, 2.67, 3.33, 3.67]]
+
+we can as well handle Invalid Matrices to see the outcome
+=========================================================
+
+The parameter ``matrix`` If ``matrix`` is not a list containing either an int or a float, a TypeError is raised.
+
+::
+
+    >>> matrix = "create a damn list"
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+::
+
+    >>> matrix = None
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+an empty list will raise the TypeError as follows
+
+::
+
+    >>> matrix = []
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+an empty list of lists will pass because it is an empty list in a list.
+
+::
+
+    >>> matrix = [[]]
+    >>> print(matrix_divided(matrix, 3))
+    [[]]
+
+if a ``matrix`` is not specifically a list of lists a TypeError will be raised.
+
+::
+
+    >>> matrix = [32, 432, 3324]
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+if any elements or arguements in ``matrix`` are neither ints nor floats a TypeError is raised.
+
+::
+
+    >>> matrix = [
+    ...     [3, 42, 4234],
+    ...     [9, "bro, use a number", 65]
+    ... ]
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+all the rows in a ``matrix`` must be the same. If any rows are
+different a different TypeError is raised.
+
+::
+
+    >>> matrix = [
+    ...     [54, 23, 4],
+    ...     [9, 6, 5, 21]
+    ... ]
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size
+
+we are now going to test Invalid Divisors and see how they respond
+==================================================================
+
+The parameter ``div`` must be either an int or float. Otherwise, a TypeError
+is raised.
+
+::
+
+    >>> matrix = [
+    ...     [1, 2, 3],
+    ...     [4, 5, 6]
+    ... ]
+    >>> print(matrix_divided(matrix, "bro, use a number"))
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+::
+
+    >>> print(matrix_divided(matrix, None))
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+``div`` parameter cant be zero. otherwise a ZeroDivisionError is raised.
+
+::
+
+    >>> print(matrix_divided(matrix, 0))
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero
