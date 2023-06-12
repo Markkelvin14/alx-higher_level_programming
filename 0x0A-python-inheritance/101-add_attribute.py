@@ -2,7 +2,7 @@
 """Defines a function that adds attributes to objects."""
 
 
-def add_atitribute(obj, atri, value):
+def add_attribute(obj, atri, value):
     """Add a new attribute to an object if possible."""
 
     if not hasattr(obj, "__dict__"):
