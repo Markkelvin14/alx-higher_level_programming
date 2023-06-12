@@ -3,7 +3,7 @@
 Rectangle = __import__('9-rectangle').Rectangle
 
 
-class Square:
+class Square(Rectangle):
     """create a classs sttring"""
 
     def __init__(self, size):
