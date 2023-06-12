@@ -40,7 +40,7 @@ case 4: passing a list
 >>> a = [2, 8, 3]
 >>> my_list = MyList(a)
 >>> my_list.print_sorted()
-[2, 8, 3]
+[2, 3, 8]
 >>>
 
 -------------------------------------------
