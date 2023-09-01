@@ -2,9 +2,9 @@
 '''  takes in a url, sends a request, and displays the response '''
 
 
-import urllib.request as request
-import urllib.error as error
+import urllib.request
 from sys import argv
+import urllib.error as error
 
 
 if __name__ == "__main__":
