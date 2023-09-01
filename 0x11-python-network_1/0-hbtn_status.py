@@ -2,6 +2,7 @@
 """Script that fetches https://intranet.hbtn.io/status"""
 import urllib.request
 
+
 if __name__ == "__main__":
     """function to print a response"""
     url = 'https://intranet.hbtn.io/status'
